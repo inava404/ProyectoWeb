@@ -4,6 +4,7 @@ import { LoginScreenComponent } from './screens/login-screen/login-screen.compon
 import { RegistroScreenComponent } from './screens/registro-screen/registro-screen.component';
 import { HomeScreenComponent } from './screens/home-screen/home-screen.component';
 import { NuevoLoginScreenComponent } from './screens/nuevo-login-screen/nuevo-login-screen.component';
+import { RegistroProductoScreenComponent} from './screens/registro-producto-screen/registro-producto-screen.component';
 
 const routes: Routes = [
   //Aquí se agregan cada una de las rutas del proyecto
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroScreenComponent, pathMatch: 'full' },
   { path: 'home', component: HomeScreenComponent, pathMatch: 'full' },
   { path: 'nuevoLogin', component: NuevoLoginScreenComponent, pathMatch: 'full'},
+  { path: 'registro-prod', component: RegistroProductoScreenComponent, pathMatch: 'full'}
 ];
 
 @NgModule({

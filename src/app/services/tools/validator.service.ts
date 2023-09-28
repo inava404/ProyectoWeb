@@ -71,4 +71,5 @@ export class ValidatorService {
     console.log(pat.test(input), input);    
     return pat.test(input);  
   }
+  
 }

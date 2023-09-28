@@ -27,4 +27,5 @@ export class ErrorsService {
   min(size: any) {    
     return 'El campo no cumple la longitud aceptada: ' + size;  
   }
+
 }

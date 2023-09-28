@@ -1,0 +1,45 @@
+<section class="registro-user">
+    <div class="wrapper">
+        <!-- Va a englobar todo el formulario con la cabecera -->
+        <div class="section-registro">
+            <div class="header-registro">
+                <mat-icon class="icon-back" (click)="regresar()">arrow_back</mat-icon>
+                <span *ngIf="!editar" class="title">Supermercado</span>
+                <span *ngIf="editar" class="title">Actualizar usuario</span>
+                <mat-icon class="store">store</mat-icon>
+            </div>
+            <div class="body-registro">
+                <img src="../../../assets/images/Supermercado.jpg" alt="Supermercado" width="60%" height="40%">
+                <div *ngIf="errors.matricula" class="invalid-feedback">{{ errors.matricula }}</div> 
+                <mat-form-field class="mat-input" appearance="outline">
+                    <mat-label>ID Producto</mat-label>
+                    <input matInput [(ngModel)]="user.matricula" name="id" placeholder="Escribe ID del producto">
+                </mat-form-field>
+
+                <div *ngIf="errors.nombreProducto" class="invalid-feedback">{{ errors.nombreProducto }}</div> 
+                <mat-form-field class="mat-input" appearance="outline">
+                    <mat-label>Nombre Producto</mat-label>
+                    <input matInput [(ngModel)]="user.nombreProducto" placeholder="Escribe nombre del producto">
+                </mat-form-field>
+                
+                <div *ngIf="errors.precio" class="invalid-feedback">{{ errors.precio }}</div>
+                <mat-form-field class="mat-input" appearance="outline">
+                    <mat-label>Precio</mat-label>
+                    <input matInput [(ngModel)]="user.precio" mask="" placeholder="Escribe precio">
+                </mat-form-field>
+                
+                <div *ngIf="errors.departamento" class="invalid-feedback">{{ errors.departamento }}</div> 
+                <mat-form-field class="mat-input" appearance="outline">
+                    <mat-label>Departamento</mat-label>
+                    <input matInput [(ngModel)]="user.departamento" placeholder="Escribe Departamento del producto" [disabled]="editar">
+                </mat-form-field>
+                
+                <div class="section-buttons">
+                    <button class="btn btn-danger" (click)="regresar()">Cancelar</button>
+                    <button *ngIf="!editar" class="btn btn-primary" type="submit" (click)="registrar()">Registrar</button>
+                    <button *ngIf="editar" class="btn btn-primary" type="submit" (click)="actualizar()">Actualizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
